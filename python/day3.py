@@ -5167,3 +5167,446 @@ print(v1 + v2)
 # =========================================================
 # END OF DUNDER / MAGIC METHODS
 # =========================================================
+
+# =========================================================
+# MODULES AND PACKAGES IN PYTHON
+# =========================================================
+
+# Modules and Packages help organize code.
+
+# They make large programs:
+# - Cleaner
+# - Reusable
+# - Easier to manage
+
+
+
+# =========================================================
+# WHAT IS A MODULE?
+# =========================================================
+
+# Module:
+# A Python file (.py)
+# containing:
+# - Functions
+# - Variables
+# - Classes
+
+# Example:
+# math.py
+# calculator.py
+
+
+
+# =========================================================
+# WHY MODULES?
+# =========================================================
+
+# Modules help:
+# - Reuse code
+# - Avoid repetition
+# - Organize programs
+
+
+
+# =========================================================
+# CREATING A MODULE
+# =========================================================
+
+# File Name:
+# mymodule.py
+
+# Example Code Inside File:
+
+
+# =========================
+# mymodule.py
+# =========================
+
+def greet(name):
+
+    print(f"Hello {name}")
+
+
+pi = 3.14
+
+
+
+# =========================================================
+# USING A MODULE
+# =========================================================
+
+# We use import keyword.
+
+# Syntax:
+# import module_name
+
+
+# Example:
+
+import math
+
+print(math.sqrt(25))
+
+# Output:
+# 5.0
+
+
+
+# =========================================================
+# IMPORTING CUSTOM MODULE
+# =========================================================
+
+# Suppose:
+# mymodule.py exists
+
+
+# =========================
+# main.py
+# =========================
+
+# import mymodule
+
+# mymodule.greet("Ruchit")
+
+# print(mymodule.pi)
+
+
+# Output:
+# Hello Ruchit
+# 3.14
+
+
+
+# =========================================================
+# IMPORT SPECIFIC CONTENT
+# =========================================================
+
+# Syntax:
+# from module_name import item
+
+
+# Example:
+
+from math import sqrt
+
+print(sqrt(36))
+
+# Output:
+# 6.0
+
+
+
+# =========================================================
+# IMPORT MULTIPLE ITEMS
+# =========================================================
+
+from math import sqrt, factorial
+
+print(sqrt(49))
+
+# Output:
+# 7.0
+
+
+print(factorial(5))
+
+# Output:
+# 120
+
+
+
+# =========================================================
+# IMPORT WITH ALIAS
+# =========================================================
+
+# Alias means temporary short name.
+
+import math as m
+
+print(m.pi)
+
+# Output:
+# 3.141592653589793
+
+
+
+# =========================================================
+# IMPORT ALL CONTENT
+# =========================================================
+
+# * imports everything.
+
+from math import *
+
+print(pow(2, 3))
+
+# Output:
+# 8.0
+
+
+# NOTE:
+# Generally not recommended
+# in large projects.
+
+
+
+# =========================================================
+# BUILT-IN MODULES
+# =========================================================
+
+# Python provides many built-in modules.
+
+# Examples:
+# math
+# random
+# os
+# datetime
+
+
+
+# =========================================================
+# RANDOM MODULE
+# =========================================================
+
+import random
+
+print(random.randint(1, 10))
+
+# Output:
+# Random number between 1 and 10
+
+
+
+# =========================================================
+# OS MODULE
+# =========================================================
+
+import os
+
+print(os.getcwd())
+
+# Output:
+# Current Working Directory
+
+
+
+# =========================================================
+# DATETIME MODULE
+# =========================================================
+
+import datetime
+
+today = datetime.datetime.now()
+
+print(today)
+
+# Output:
+# Current Date and Time
+
+
+
+# =========================================================
+# WHAT IS A PACKAGE?
+# =========================================================
+
+# Package:
+# A directory containing:
+# - Multiple modules
+# - __init__.py file
+
+# Packages provide hierarchy.
+
+
+
+# =========================================================
+# PACKAGE STRUCTURE
+# =========================================================
+
+# Example:
+
+# mypackage/
+#
+# ├── __init__.py
+# ├── math_module.py
+# ├── string_module.py
+
+
+# __init__.py tells Python:
+# "This folder is a package"
+
+
+
+# =========================================================
+# CREATING PACKAGE MODULE
+# =========================================================
+
+# =========================
+# math_module.py
+# =========================
+
+def addition(a, b):
+
+    return a + b
+
+
+
+# =========================
+# string_module.py
+# =========================
+
+def greet(name):
+
+    print(f"Hello {name}")
+
+
+
+# =========================================================
+# USING PACKAGE
+# =========================================================
+
+# Syntax:
+# import package.module
+
+
+# Example:
+
+# import mypackage.math_module
+
+# print(mypackage.math_module.addition(10, 20))
+
+
+# Output:
+# 30
+
+
+
+# =========================================================
+# IMPORT SPECIFIC FUNCTION FROM PACKAGE
+# =========================================================
+
+# from package.module import function
+
+
+# Example:
+
+# from mypackage.math_module import addition
+
+# print(addition(5, 5))
+
+
+# Output:
+# 10
+
+
+
+# =========================================================
+# USING ALIAS WITH PACKAGE
+# =========================================================
+
+# import mypackage.math_module as mm
+
+# print(mm.addition(2, 3))
+
+
+# Output:
+# 5
+
+
+
+# =========================================================
+# __name__ VARIABLE
+# =========================================================
+
+# Every Python file has __name__ variable.
+
+print(__name__)
+
+# Output:
+# __main__
+
+
+# If file imported:
+# __name__ becomes module name.
+
+
+
+# =========================================================
+# __name__ == "__main__"
+# =========================================================
+
+# Used to check:
+# File running directly or imported.
+
+
+# Example:
+
+# if __name__ == "__main__":
+#
+#     print("Running Directly")
+
+
+# Output:
+# Running Directly
+
+
+
+# =========================================================
+# dir() FUNCTION
+# =========================================================
+
+# dir() shows module contents.
+
+import math
+
+print(dir(math))
+
+# Output:
+# Large list of math module functions
+
+
+
+# =========================================================
+# help() FUNCTION
+# =========================================================
+
+# help() gives documentation.
+
+help(math)
+
+# Output:
+# Complete math module documentation
+
+
+
+# =========================================================
+# ADVANTAGES OF MODULES & PACKAGES
+# =========================================================
+
+# 1. Code Reusability
+# 2. Better Organization
+# 3. Easier Maintenance
+# 4. Reduces Code Duplication
+# 5. Improves Scalability
+
+
+
+# =========================================================
+# IMPORTANT POINTS
+# =========================================================
+
+# 1. Module is a Python file.
+# 2. Package is collection of modules.
+# 3. import keyword imports module.
+# 4. from import imports specific items.
+# 5. __init__.py creates package.
+# 6. Built-in modules provide extra functionality.
+# 7. Alias gives short temporary names.
+# 8. __name__ identifies current module.
+# 9. Packages help organize large projects.
+
+
+
+# =========================================================
+# END OF MODULES AND PACKAGES
+# =========================================================
