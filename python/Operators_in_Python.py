@@ -267,3 +267,20 @@ remaining_candies = candies % kids
 # Display the result
 print(f"Candies per Kid = {candies_per_kid}")
 print(f"Remaining Candies = {remaining_candies}")
+
+
+
+
+# ==========================================
+# Program: Calculate Percentage Score
+# ==========================================
+
+# Take input from the user
+obtained_marks = float(input("Enter obtained marks: "))
+total_marks = float(input("Enter total marks: "))
+
+# Calculate percentage
+percentage = (obtained_marks / total_marks) * 100
+
+# Display the result
+print(f"Percentage = {percentage:.2f}%")
